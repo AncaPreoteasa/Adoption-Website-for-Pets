@@ -3,6 +3,8 @@ import { NavLink } from "react-router-dom";
 import Footer from "./Footer";
 import Dogs from "./Dogs";
 import Cats from "./Cats";
+import PetCard from "./PetCard";
+
 import styles from "./Layout.module.css";
 
 export default function Layout() {
@@ -26,6 +28,7 @@ export default function Layout() {
           </ul>
         </nav>
       </header>
+      <PetCard />
       <Dogs />
       <Cats />
       <Footer />
