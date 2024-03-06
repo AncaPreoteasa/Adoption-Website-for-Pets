@@ -48,9 +48,13 @@
       "id": 1,
       "name": "Buddy",
       "type": "Dog",
-      "breed": "Labrador Retriever",
+      "breed": "Golden Retriever",
       "age": 2,
-      "specialNeeds": false
+      "gender": "male",
+      "specialNeeds": false,
+      "location": "Craiova",
+      "image": "https://www.megapet.ro/continut/upload/hrana-Golden-Retriever.jpg",
+      "description": "The Golden Retriever is a sturdy, muscular dog of medium size, famous for the dense, lustrous coat of gold that gives the breed its name. The broad head, with its friendly and intelligent eyes, short ears, and straight muzzle, is a breed hallmark. "
     },
     {
       "id": 2,
@@ -58,7 +62,11 @@
       "type": "Dog",
       "breed": "Beagle",
       "age": 1,
-      "specialNeeds": false
+      "gender": "male",
+      "specialNeeds": false,
+      "location": "Bucharest",
+      "image": "https://www.zooplus.ro/ghid/wp-content/uploads/2021/07/caine-beagle.webp",
+      "description": "Lorem ipsum es el texto que se usa habitualmente en diseño gráfico en demostraciones de tipografías o de borradores de diseño para probar el diseño visual antes de insertar el texto final. "
     },
     {
       "id": 3,
@@ -66,7 +74,11 @@
       "type": "Cat",
       "breed": "Siamese",
       "age": 4,
-      "specialNeeds": false
+      "gender": "female",
+      "specialNeeds": false,
+      "location": "Sibiu",
+      "image": "https://www.thesprucepets.com/thmb/kDcQES0eO7DnfjZ5CBmkfOrxnyg=/750x0/filters:no_upscale():max_bytes(150000):strip_icc():format(webp)/facts-about-siamese-cats-4173491-hero-5a607df9e57b40a58c803a76859b6694.jpg",
+      "description": "Lorem ipsum es el texto que se usa habitualmente en diseño gráfico en demostraciones de tipografías o de borradores de diseño para probar el diseño visual antes de insertar el texto final. "
     },
     {
       "id": 4,
@@ -74,7 +86,11 @@
       "type": "Dog",
       "breed": "Stray",
       "age": 6,
-      "specialNeeds": true
+      "gender": "male",
+      "specialNeeds": true,
+      "location": "Craiova",
+      "image": "https://i.natgeofe.com/n/2cf64015-d343-4981-90cd-c528a65812e0/01-stray-dogs-nationalgeographic_1927666_3x2.jpg?w=1436&h=958",
+      "description": "Lorem ipsum es el texto que se usa habitualmente en diseño gráfico en demostraciones de tipografías o de borradores de diseño para probar el diseño visual antes de insertar el texto final. "
     }
   ]
 }

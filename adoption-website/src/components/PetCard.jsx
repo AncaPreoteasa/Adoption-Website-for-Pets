@@ -10,11 +10,11 @@ import Avatar from "@mui/material/Avatar";
 import IconButton from "@mui/material/IconButton";
 import Typography from "@mui/material/Typography";
 import { red } from "@mui/material/colors";
-import FavoriteIcon from "@mui/icons-material/Favorite";
 import ShareIcon from "@mui/icons-material/Share";
 import ExpandMoreIcon from "@mui/icons-material/ExpandMore";
 import MoreVertIcon from "@mui/icons-material/MoreVert";
 import Heart from "./Heart";
+import styles from "./PetCard.module.css";
 
 const ExpandMore = styled((props) => {
   const { expand, ...other } = props;
@@ -27,88 +27,77 @@ const ExpandMore = styled((props) => {
   }),
 }));
 
-export default function PetCart() {
+export default function PetCard() {
   const [expanded, setExpanded] = React.useState(false);
+  const [pets, setPets] = React.useState([]);
+
+  React.useEffect(() => {
+    fetch("http://localhost:3001/pets").then((res) =>
+      res.json().then((data) => setPets(data))
+    );
+  }, []);
 
   const handleExpandClick = () => {
     setExpanded(!expanded);
   };
 
   return (
-    <Card sx={{ maxWidth: 345 }}>
-      <CardHeader
-        avatar={
-          <Avatar sx={{ bgcolor: red[500] }} aria-label="recipe">
-            R
-          </Avatar>
-        }
-        action={
-          <IconButton aria-label="settings">
-            <MoreVertIcon />
-          </IconButton>
-        }
-        title="Golden Retriever 5 months"
-        subheader="September 14, 2023"
-      />
-      <CardMedia
-        component="img"
-        height="194"
-        image="/static/images/cards/paella.jpg"
-        alt="Golden Retriever"
-      />
-      <CardContent>
-        <Typography variant="body2" color="text.secondary">
-          The Golden Retriever is a sturdy, muscular dog of medium size, famous
-          for the dense, lustrous coat of gold that gives the breed its name.
-          The broad head, with its friendly and intelligent eyes, short ears,
-          and straight muzzle, is a breed hallmark.
-        </Typography>
-      </CardContent>
-      <CardActions disableSpacing>
-        <Heart />
-        <IconButton aria-label="share">
-          <ShareIcon />
-        </IconButton>
-        <ExpandMore
-          expand={expanded}
-          onClick={handleExpandClick}
-          aria-expanded={expanded}
-          aria-label="show more"
-        >
-          <ExpandMoreIcon />
-        </ExpandMore>
-      </CardActions>
-      <Collapse in={expanded} timeout="auto" unmountOnExit>
-        <CardContent>
-          <Typography paragraph>Details:</Typography>
-          <Typography paragraph>
-            Heat 1/2 cup of the broth in a pot until simmering, add saffron and
-            set aside for 10 minutes.
-          </Typography>
-          <Typography paragraph>
-            Heat oil in a (14- to 16-inch) paella pan or a large, deep skillet
-            over medium-high heat. Add chicken, shrimp and chorizo, and cook,
-            stirring occasionally until lightly browned, 6 to 8 minutes.
-            Transfer shrimp to a large plate and set aside, leaving chicken and
-            chorizo in the pan. Add pimentón, bay leaves, garlic, tomatoes,
-            onion, salt and pepper, and cook, stirring often until thickened and
-            fragrant, about 10 minutes. Add saffron broth and remaining 4 1/2
-            cups chicken broth; bring to a boil.
-          </Typography>
-          <Typography paragraph>
-            Add rice and stir very gently to distribute. Top with artichokes and
-            peppers, and cook without stirring, until most of the liquid is
-            absorbed, 15 to 18 minutes. Reduce heat to medium-low, add reserved
-            shrimp and mussels, tucking them down into the rice, and cook again
-            without stirring, until mussels have opened and rice is just tender,
-            5 to 7 minutes more. (Discard any mussels that don&apos;t open.)
-          </Typography>
-          <Typography>
-            Set aside off of the heat to let rest for 10 minutes, and then
-            serve.
-          </Typography>
-        </CardContent>
-      </Collapse>
-    </Card>
+    <ul className={styles.container}>
+      {pets.map((pet) => (
+        <Card key={pet.id} sx={{ maxWidth: 345 }} className={styles.card}>
+          <CardHeader
+            avatar={
+              <Avatar sx={{ bgcolor: red[500] }} aria-label="recipe">
+                R
+              </Avatar>
+            }
+            action={
+              <IconButton aria-label="settings">
+                <MoreVertIcon />
+              </IconButton>
+            }
+            title={`${pet.name} ${pet.age} years`}
+            subheader={pet.date}
+          />
+          <CardMedia
+            component="img"
+            height="194"
+            image={pet.image}
+            alt={pet.name}
+          />
+          <CardContent>
+            <Typography
+              variant="body2"
+              color="text.secondary"
+              className={styles.description}
+            >
+              {pet.description}
+            </Typography>
+          </CardContent>
+          <CardActions disableSpacing>
+            <Heart />
+            <IconButton aria-label="share">
+              <ShareIcon />
+            </IconButton>
+            <ExpandMore
+              expand={expanded}
+              onClick={handleExpandClick}
+              aria-expanded={expanded}
+              aria-label="show more"
+            >
+              <ExpandMoreIcon />
+            </ExpandMore>
+          </CardActions>
+          <Collapse in={expanded} timeout="auto" unmountOnExit>
+            <CardContent>
+              <Typography paragraph>Details:</Typography>
+              <div>{pet.location}</div>
+              <div>{pet.gender}</div>
+              <div>{pet.description}</div>
+            </CardContent>
+          </Collapse>
+        </Card>
+      ))}
+    </ul>
   );
 }
