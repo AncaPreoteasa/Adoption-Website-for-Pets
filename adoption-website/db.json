@@ -1,0 +1,80 @@
+{
+  "users": [
+    {
+      "email": "a@a.com",
+      "password": "parola",
+      "firstName": "Anca",
+      "lastName": "Preoteasa",
+      "id": 1,
+      "retypePassword": "parola"
+    },
+    {
+      "email": "m@m",
+      "password": "parola",
+      "firstName": "Maria",
+      "lastName": "Mad",
+      "id": 1,
+      "retypePassword": "parola"
+    }
+  ],
+  "favorite": [
+    {
+      "id": 1,
+      "userId": 1,
+      "pets": [
+        {
+          "petId": 4
+        },
+        {
+          "petId": 2
+        }
+      ]
+    },
+    {
+      "id": 2,
+      "userId": 2,
+      "pets": [
+        {
+          "petId": 1
+        },
+        {
+          "petId": 2
+        }
+      ]
+    }
+  ],
+  "pets": [
+    {
+      "id": 1,
+      "name": "Buddy",
+      "type": "Dog",
+      "breed": "Labrador Retriever",
+      "age": 2,
+      "specialNeeds": false
+    },
+    {
+      "id": 2,
+      "name": "Max",
+      "type": "Dog",
+      "breed": "Beagle",
+      "age": 1,
+      "specialNeeds": false
+    },
+    {
+      "id": 3,
+      "name": "Whiskers",
+      "type": "Cat",
+      "breed": "Siamese",
+      "age": 4,
+      "specialNeeds": false
+    },
+    {
+      "id": 4,
+      "name": "Ace",
+      "type": "Dog",
+      "breed": "Stray",
+      "age": 6,
+      "specialNeeds": true
+    }
+  ]
+}
