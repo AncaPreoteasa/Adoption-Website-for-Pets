@@ -7,6 +7,7 @@ import Articles from "./components/Articles";
 import NoPage from "./components/NoPage";
 import Contact from "./components/Contact";
 import Adoption from "./components/Adoption";
+import PetDetails from "./components/PetDetails";
 
 import "./App.css";
 
@@ -22,6 +23,7 @@ function App() {
           <Route path="articles" element={<Articles />} />
           <Route path="contact" element={<Contact />} />
           <Route path="adoption" element={<Adoption />} />
+          <Route path="pet-details/:id" element={<PetDetails />} />
           <Route path="*" element={<NoPage />} />
         </Routes>
       </BrowserRouter>

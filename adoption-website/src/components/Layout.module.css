@@ -26,6 +26,11 @@
   color: var(--hover-color);
 }
 
+.category {
+  display: flex;
+  justify-content: center;
+}
+
 @media (max-width: 768px) {
   .nav ul {
     text-align: center;

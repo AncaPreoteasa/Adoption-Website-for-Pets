@@ -15,6 +15,7 @@ import ExpandMoreIcon from "@mui/icons-material/ExpandMore";
 import MoreVertIcon from "@mui/icons-material/MoreVert";
 import Heart from "./Heart";
 import styles from "./PetCard.module.css";
+import { Link } from "react-router-dom";
 
 const ExpandMore = styled((props) => {
   const { expand, ...other } = props;
@@ -59,12 +60,14 @@ export default function PetCard() {
             title={`${pet.name} ${pet.age} years`}
             subheader={pet.date}
           />
-          <CardMedia
-            component="img"
-            height="194"
-            image={pet.image}
-            alt={pet.name}
-          />
+          <Link to={`/pet-details/${pet.id}`}>
+            <CardMedia
+              component="img"
+              height="194"
+              image={pet.image}
+              alt={pet.name}
+            />
+          </Link>
           <CardContent>
             <Typography
               variant="body2"

@@ -29,8 +29,10 @@ export default function Layout() {
         </nav>
       </header>
       <PetCard />
-      <Dogs />
-      <Cats />
+      <div className={styles.category}>
+        <Dogs />
+        <Cats />
+      </div>
       <Footer />
     </>
   );

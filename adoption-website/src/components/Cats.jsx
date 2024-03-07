@@ -1,7 +1,9 @@
+import styles from "./Cats.module.css";
+
 export default function Cats() {
   return (
     <>
-      <div>CATS</div>
+      <div className={styles.container}>CATS</div>
     </>
   );
 }
