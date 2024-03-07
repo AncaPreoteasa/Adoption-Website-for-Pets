@@ -1,0 +1,25 @@
+.container {
+  max-width: 800px;
+  margin: 0 auto;
+  padding: 20px;
+}
+
+@media (max-width: 768px) {
+  .container {
+    padding: 10px;
+  }
+}
+
+.status {
+  font-weight: bold;
+}
+
+.trained,
+.vaccinated {
+  color: green;
+}
+
+.notTrained,
+.notVaccinated {
+  color: var(--error-color);
+}

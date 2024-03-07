@@ -1,11 +1,21 @@
 import React, { useState, useEffect } from "react";
 import { useParams } from "react-router-dom";
+import Loader from "./Loader";
+import clsx from "clsx";
+import styles from "./PetDetails.module.css";
+import { useNavigate } from "react-router-dom";
 
 const PetDetails = () => {
   const { id } = useParams();
   const [petDetails, setPetDetails] = useState(null);
 
   const [error, setError] = useState(null);
+
+  const navigateTo = useNavigate();
+
+  const goBackToLayout = () => {
+    navigateTo("/");
+  };
 
   useEffect(() => {
     fetch(`http://localhost:3001/pets?id=${id}`, {
@@ -15,8 +25,8 @@ const PetDetails = () => {
     })
       .then((response) => {
         if (response.status !== 200) {
-          console.log("NU E CAINE");
-          setError("nu e caine");
+          console.log("Couldn't find the pet");
+          setError("Sorry :( Couldn't find the pet");
         } else {
           response.json().then((jsonObjectArray) => {
             console.log("json: ", jsonObjectArray[0]);
@@ -31,15 +41,46 @@ const PetDetails = () => {
     if (error) {
       return <p>{error}</p>;
     } else {
-      return <p>asteapta te rog, draga.</p>;
+      return <Loader />;
     }
   }
 
   return (
-    <div>
+    <div className={styles.container}>
       <h2>{petDetails.name}</h2>
-      <p>ID: {petDetails.id}</p>
-      <p>Breed: {petDetails.breed}</p>
+      <hr></hr>
+      <p>
+        <b>Breed:</b> {petDetails.breed}
+      </p>
+      <img src={petDetails.image} alt={petDetails.name} width="400"></img>
+      <p>
+        <b>About:</b> {petDetails.description}
+      </p>
+      <p>
+        <b>Size:</b> {petDetails.size}
+      </p>
+      <p>
+        <b>Age:</b> {petDetails.age}
+      </p>
+      <p
+        className={clsx(styles.status, {
+          [styles.trained]: petDetails.trained,
+          [styles.notTrained]: !petDetails.trained,
+        })}
+      >
+        <b>House-trained:</b> {petDetails.trained ? "Yes" : "No"}
+      </p>
+      <p
+        className={clsx(styles.status, {
+          [styles.vaccinated]: petDetails.vaccinated,
+          [styles.notVaccinated]: !petDetails.vaccinated,
+        })}
+      >
+        <b>Health:</b>{" "}
+        {petDetails.vaccinated ? "Fully vaccinated" : "Not fully vaccinated"}
+      </p>
+      <button>ADOPT 🐾</button>
+      <button onClick={goBackToLayout}>Go Back</button>
     </div>
   );
 };

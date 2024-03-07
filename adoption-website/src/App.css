@@ -2,4 +2,6 @@
   --main-color: #3498db;
   --background-color: #ecf0f1;
   --hover-color: #e74c3c;
+  --error-color: rgb(161, 42, 42);
+  --secondary-color: rgba(255, 166, 0, 0.818);
 }
