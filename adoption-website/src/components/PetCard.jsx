@@ -45,7 +45,7 @@ export default function PetCard() {
   return (
     <ul className={styles.container}>
       {pets.map((pet) => (
-        <Card key={pet.id} sx={{ maxWidth: 345 }} className={styles.card}>
+        <Card key={pet.id} sx={{ maxWidth: 200 }} className={styles.card}>
           <CardHeader
             avatar={
               <Avatar sx={{ bgcolor: red[500] }} aria-label="recipe">
@@ -63,7 +63,7 @@ export default function PetCard() {
           <Link to={`/pet-details/${pet.id}`}>
             <CardMedia
               component="img"
-              height="194"
+              height="164"
               image={pet.image}
               alt={pet.name}
             />
@@ -93,9 +93,18 @@ export default function PetCard() {
           </CardActions>
           <Collapse in={expanded} timeout="auto" unmountOnExit>
             <CardContent>
-              <Typography paragraph>Details:</Typography>
-              <div>{pet.location}</div>
-              <div>{pet.gender}</div>
+              <Typography paragraph>
+                <b>Details:</b>
+              </Typography>
+              <div>
+                <b>Location: </b>
+                {pet.location}
+              </div>
+              <div>
+                <b>Gender: </b>
+                {pet.gender}
+              </div>
+              <hr></hr>
               <div>{pet.description}</div>
             </CardContent>
           </Collapse>

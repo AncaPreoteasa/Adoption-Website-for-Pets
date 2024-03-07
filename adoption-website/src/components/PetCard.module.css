@@ -2,6 +2,22 @@
   display: flex;
   flex-wrap: wrap;
   align-items: center;
+  justify-content: center;
+  padding: 0;
+}
+
+.card {
+  padding: 2em;
+  margin: 1em;
+  border-top-left-radius: 25px;
+  border-top-right-radius: 25px;
+  border: 2px solid var(--background-color);
+}
+
+.card:hover {
+  border-color: var(--main-color);
+  opacity: 0.8;
+  background-color: #eee;
 }
 
 .description {
@@ -10,12 +26,7 @@
   overflow: hidden;
 }
 
-.card {
-  padding: 2em;
-  margin: 1em;
-}
-
-@media only screen and (max-width: 1000px) {
+@media only screen and (max-width: 600px) {
   .container {
     flex-direction: column;
   }

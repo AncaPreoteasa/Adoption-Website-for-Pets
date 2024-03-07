@@ -4,6 +4,7 @@ import Loader from "./Loader";
 import clsx from "clsx";
 import styles from "./PetDetails.module.css";
 import { useNavigate } from "react-router-dom";
+import Header from "./Header";
 
 const PetDetails = () => {
   const { id } = useParams();
@@ -46,42 +47,45 @@ const PetDetails = () => {
   }
 
   return (
-    <div className={styles.container}>
-      <h2>{petDetails.name}</h2>
-      <hr></hr>
-      <p>
-        <b>Breed:</b> {petDetails.breed}
-      </p>
-      <img src={petDetails.image} alt={petDetails.name} width="400"></img>
-      <p>
-        <b>About:</b> {petDetails.description}
-      </p>
-      <p>
-        <b>Size:</b> {petDetails.size}
-      </p>
-      <p>
-        <b>Age:</b> {petDetails.age}
-      </p>
-      <p
-        className={clsx(styles.status, {
-          [styles.trained]: petDetails.trained,
-          [styles.notTrained]: !petDetails.trained,
-        })}
-      >
-        <b>House-trained:</b> {petDetails.trained ? "Yes" : "No"}
-      </p>
-      <p
-        className={clsx(styles.status, {
-          [styles.vaccinated]: petDetails.vaccinated,
-          [styles.notVaccinated]: !petDetails.vaccinated,
-        })}
-      >
-        <b>Health:</b>{" "}
-        {petDetails.vaccinated ? "Fully vaccinated" : "Not fully vaccinated"}
-      </p>
-      <button>ADOPT 🐾</button>
-      <button onClick={goBackToLayout}>Go Back</button>
-    </div>
+    <>
+      <Header />
+      <div className={styles.container}>
+        <h2>{petDetails.name}</h2>
+        <hr></hr>
+        <p>
+          <b>Breed:</b> {petDetails.breed}
+        </p>
+        <img src={petDetails.image} alt={petDetails.name} width="400"></img>
+        <p>
+          <b>About:</b> {petDetails.description}
+        </p>
+        <p>
+          <b>Size:</b> {petDetails.size}
+        </p>
+        <p>
+          <b>Age:</b> {petDetails.age}
+        </p>
+        <p
+          className={clsx(styles.status, {
+            [styles.trained]: petDetails.trained,
+            [styles.notTrained]: !petDetails.trained,
+          })}
+        >
+          <b>House-trained:</b> {petDetails.trained ? "Yes" : "No"}
+        </p>
+        <p
+          className={clsx(styles.status, {
+            [styles.vaccinated]: petDetails.vaccinated,
+            [styles.notVaccinated]: !petDetails.vaccinated,
+          })}
+        >
+          <b>Health:</b>{" "}
+          {petDetails.vaccinated ? "Fully vaccinated" : "Not fully vaccinated"}
+        </p>
+        <button>ADOPT 🐾</button>
+        <button onClick={goBackToLayout}>Go Back</button>
+      </div>
+    </>
   );
 };
 

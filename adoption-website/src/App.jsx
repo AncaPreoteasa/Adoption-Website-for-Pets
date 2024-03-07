@@ -8,7 +8,8 @@ import NoPage from "./components/NoPage";
 import Contact from "./components/Contact";
 import Adoption from "./components/Adoption";
 import PetDetails from "./components/PetDetails";
-
+import SignUp from "./components/SignUp";
+import LogIn from "./components/LogIn";
 import "./App.css";
 
 function App() {
@@ -23,6 +24,8 @@ function App() {
           <Route path="articles" element={<Articles />} />
           <Route path="contact" element={<Contact />} />
           <Route path="adoption" element={<Adoption />} />
+          <Route path="signUp" element={<SignUp />} />
+          <Route path="logIn" element={<LogIn />} />
           <Route path="pet-details/:id" element={<PetDetails />} />
           <Route path="*" element={<NoPage />} />
         </Routes>

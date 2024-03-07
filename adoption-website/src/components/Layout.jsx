@@ -1,38 +1,56 @@
 import React from "react";
 import { NavLink } from "react-router-dom";
 import Footer from "./Footer";
-import Dogs from "./Dogs";
-import Cats from "./Cats";
 import PetCard from "./PetCard";
+import Header from "./Header";
 
 import styles from "./Layout.module.css";
 
 export default function Layout() {
   return (
     <>
+      <Header />
       <header className={styles.header}>
         <nav className={styles.nav}>
           <ul>
             <li>
-              <NavLink to="/home">Home</NavLink>
+              <NavLink to="/home">HOME</NavLink>
             </li>
             <li>
-              <NavLink to="/articles">Articles</NavLink>
+              <NavLink to="/articles">ARTICLES</NavLink>
             </li>
             <li>
-              <NavLink to="/contact">Contact</NavLink>
+              <NavLink to="/contact">CONTACT</NavLink>
             </li>
             <li>
-              <NavLink to="/adoption">Adoption</NavLink>
+              <NavLink to="/adoption">ADOPTION</NavLink>
             </li>
           </ul>
         </nav>
       </header>
-      <PetCard />
-      <div className={styles.category}>
-        <Dogs />
-        <Cats />
+      <div className={styles.container}>
+        <div className={styles.headingsContainer}>
+          <h1 className={styles.heading1}>Find your new best friend</h1>
+          <h2 className={styles.heading2}>
+            Browse pets from all over the country.
+          </h2>
+        </div>
+        <div className={styles.categoryContainer}>
+          <NavLink to="dogs" className={styles.category}>
+            Dogs 🦮
+          </NavLink>
+          <NavLink to="cats" className={styles.category}>
+            Cats 🐈
+          </NavLink>
+          <NavLink to="other" className={styles.category}>
+            Other 🐇
+          </NavLink>
+        </div>
       </div>
+      <h2 className={styles.headingPetsAvailable}>
+        Pets available for adoption ⬇
+      </h2>
+      <PetCard />
       <Footer />
     </>
   );
