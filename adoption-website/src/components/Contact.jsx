@@ -1,16 +1,10 @@
-import { useNavigate } from "react-router-dom";
+import Header from "./Header";
 
 export default function Contact() {
-  const navigateTo = useNavigate();
-
-  const goBackToLayout = () => {
-    navigateTo("/");
-  };
-
   return (
     <>
+      <Header />
       <h1>CONTACT</h1>
-      <button onClick={goBackToLayout}>Go Back</button>
     </>
   );
 }

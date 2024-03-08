@@ -1,15 +1,10 @@
-import { useNavigate } from "react-router-dom";
+import Header from "./Header";
 
 export default function Articles() {
-  const navigateTo = useNavigate();
-
-  const goBackToLayout = () => {
-    navigateTo("/");
-  };
   return (
     <>
+      <Header />
       <h1>ARTICLES</h1>
-      <button onClick={goBackToLayout}>Go Back</button>
     </>
   );
 }

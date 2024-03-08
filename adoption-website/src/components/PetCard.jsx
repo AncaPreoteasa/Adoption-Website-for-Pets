@@ -33,7 +33,7 @@ export default function PetCard() {
   const [pets, setPets] = React.useState([]);
 
   React.useEffect(() => {
-    fetch("http://localhost:3001/pets").then((res) =>
+    fetch("http://localhost:3000/pets").then((res) =>
       res.json().then((data) => setPets(data))
     );
   }, []);

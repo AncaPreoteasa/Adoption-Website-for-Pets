@@ -3,7 +3,6 @@ import { useParams } from "react-router-dom";
 import Loader from "./Loader";
 import clsx from "clsx";
 import styles from "./PetDetails.module.css";
-import { useNavigate } from "react-router-dom";
 import Header from "./Header";
 
 const PetDetails = () => {
@@ -12,14 +11,8 @@ const PetDetails = () => {
 
   const [error, setError] = useState(null);
 
-  const navigateTo = useNavigate();
-
-  const goBackToLayout = () => {
-    navigateTo("/");
-  };
-
   useEffect(() => {
-    fetch(`http://localhost:3001/pets?id=${id}`, {
+    fetch(`http://localhost:3000/pets?id=${id}`, {
       headers: {
         Accept: "application/json",
       },
@@ -83,7 +76,6 @@ const PetDetails = () => {
           {petDetails.vaccinated ? "Fully vaccinated" : "Not fully vaccinated"}
         </p>
         <button>ADOPT 🐾</button>
-        <button onClick={goBackToLayout}>Go Back</button>
       </div>
     </>
   );

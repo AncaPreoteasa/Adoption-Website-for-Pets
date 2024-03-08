@@ -3,8 +3,15 @@ import styles from "./Header.module.css";
 import logoImage from "../assets/pet-logo.png";
 import Heart from "./Heart";
 import { NavLink } from "react-router-dom";
+import { useNavigate } from "react-router-dom";
 
 export default function Header() {
+  const navigateTo = useNavigate();
+
+  const goBackToLayout = () => {
+    navigateTo("/");
+  };
+
   return (
     <div className={styles.container}>
       <div className={styles.logoContainer}>
@@ -13,6 +20,7 @@ export default function Header() {
           alt="logo"
           width="50"
           className={styles.logo}
+          onClick={goBackToLayout}
         ></img>
       </div>
       <div className={styles.links}>

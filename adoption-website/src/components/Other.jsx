@@ -1,10 +1,10 @@
 import Header from "./Header";
 
-export default function Home() {
+export default function Other() {
   return (
     <>
       <Header />
-      <h1>HOME PAGE</h1>
+      <h1>OTHER</h1>
     </>
   );
 }

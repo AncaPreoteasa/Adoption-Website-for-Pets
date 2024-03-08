@@ -6,6 +6,10 @@
   background-color: #eee;
 }
 
+.logoContainer:hover {
+  cursor: pointer;
+}
+
 .logo {
   padding: 0;
 }

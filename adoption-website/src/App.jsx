@@ -10,6 +10,7 @@ import Adoption from "./components/Adoption";
 import PetDetails from "./components/PetDetails";
 import SignUp from "./components/SignUp";
 import LogIn from "./components/LogIn";
+import Other from "./components/Other";
 import "./App.css";
 
 function App() {
@@ -21,6 +22,7 @@ function App() {
           <Route path="home" element={<Home />} />
           <Route path="dogs" element={<Dogs />} />
           <Route path="cats" element={<Cats />} />
+          <Route path="other" element={<Other />} />
           <Route path="articles" element={<Articles />} />
           <Route path="contact" element={<Contact />} />
           <Route path="adoption" element={<Adoption />} />
