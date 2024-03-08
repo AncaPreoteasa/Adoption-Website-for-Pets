@@ -54,6 +54,7 @@
   border-radius: 25px;
   border: 2px solid var(--background-color);
   background-color: white;
+  letter-spacing: 1px;
 }
 
 .category:hover {
@@ -73,7 +74,7 @@
   background-position: center;
   background-repeat: no-repeat;
   position: relative;
-  height: 500px;
+  height: 400px;
 }
 
 .heading1 {

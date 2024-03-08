@@ -72,7 +72,7 @@
       "trained": true,
       "vaccinated": true,
       "image": "https://www.zooplus.ro/ghid/wp-content/uploads/2021/07/caine-beagle.webp",
-      "description": "Lorem ipsum es el texto que se usa habitualmente en diseño gráfico en demostraciones de tipografías o de borradores de diseño para probar el diseño visual antes de insertar el texto final. "
+      "description": "A breed described as 'merry' by its fanciers, Beagles are loving and lovable, happy, and companionable'all qualities that make them excellent family dogs. No wonder that for years the Beagle has been the most popular hound dog among American pet owners. These are curious, clever, and energetic hounds who require plenty of playtime. "
     },
     {
       "id": 3,
@@ -87,7 +87,7 @@
       "trained": false,
       "'vaccinated": true,
       "image": "https://www.thesprucepets.com/thmb/kDcQES0eO7DnfjZ5CBmkfOrxnyg=/750x0/filters:no_upscale():max_bytes(150000):strip_icc():format(webp)/facts-about-siamese-cats-4173491-hero-5a607df9e57b40a58c803a76859b6694.jpg",
-      "description": "Lorem ipsum es el texto que se usa habitualmente en diseño gráfico en demostraciones de tipografías o de borradores de diseño para probar el diseño visual antes de insertar el texto final. "
+      "description": "The Siamese cat's personality is friendly, affectionate, outgoing, and social. This beautiful breed is also one of the most intelligent around."
     },
     {
       "id": 4,
@@ -102,7 +102,7 @@
       "trained": false,
       "'vaccinated": false,
       "image": "https://i.natgeofe.com/n/2cf64015-d343-4981-90cd-c528a65812e0/01-stray-dogs-nationalgeographic_1927666_3x2.jpg?w=1436&h=958",
-      "description": "Lorem ipsum es el texto que se usa habitualmente en diseño gráfico en demostraciones de tipografías o de borradores de diseño para probar el diseño visual antes de insertar el texto final. "
+      "description": "Adopting a formerly stray dog can be a very rewarding experience. However, it's rather normal to encounter some challenges. "
     }
   ]
 }

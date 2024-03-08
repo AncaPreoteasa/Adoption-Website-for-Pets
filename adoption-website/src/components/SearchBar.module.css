@@ -1,0 +1,15 @@
+.container {
+  display: flex;
+  justify-content: center;
+  padding: 0.5em;
+  height: 10%;
+}
+
+.searchBar {
+  padding: 1em;
+  margin: 0.4em;
+  width: 20%;
+  border-radius: 5px;
+  border-color: var(--main-color);
+  height: 10px;
+}
