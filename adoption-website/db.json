@@ -5,7 +5,7 @@
       "password": "parola",
       "firstName": "Anca",
       "lastName": "Preoteasa",
-      "id": 1,
+      "id": "1",
       "retypePassword": "parola"
     },
     {
@@ -13,13 +13,37 @@
       "password": "parola",
       "firstName": "Maria",
       "lastName": "Mad",
-      "id": 2,
+      "id": "2",
       "retypePassword": "parola"
+    },
+    {
+      "id": "2de7",
+      "firstName": "refef",
+      "lastName": "ccerce",
+      "email": "a@p",
+      "password": "parola",
+      "retypePassword": "parola"
+    },
+    {
+      "id": "b230",
+      "firstName": "Anca",
+      "lastName": "Preoteasa",
+      "email": "preoteasaanca95@gmail.com",
+      "password": "l",
+      "retypePassword": "l"
+    },
+    {
+      "id": "0624",
+      "firstName": "Anca",
+      "lastName": "Preoteasa",
+      "email": "p@p.com",
+      "password": "a",
+      "retypePassword": "a"
     }
   ],
   "favorite": [
     {
-      "id": 1,
+      "id": "1",
       "userId": 1,
       "pets": [
         {
@@ -31,7 +55,7 @@
       ]
     },
     {
-      "id": 2,
+      "id": "2",
       "userId": 2,
       "pets": [
         {
@@ -45,7 +69,7 @@
   ],
   "pets": [
     {
-      "id": 1,
+      "id": "1",
       "name": "Buddy",
       "type": "Dog",
       "breed": "Golden Retriever",
@@ -60,7 +84,7 @@
       "description": "The Golden Retriever is a sturdy, muscular dog of medium size, famous for the dense, lustrous coat of gold that gives the breed its name. The broad head, with its friendly and intelligent eyes, short ears, and straight muzzle, is a breed hallmark. "
     },
     {
-      "id": 2,
+      "id": "2",
       "name": "Max",
       "type": "Dog",
       "breed": "Beagle",
@@ -75,7 +99,7 @@
       "description": "A breed described as 'merry' by its fanciers, Beagles are loving and lovable, happy, and companionable'all qualities that make them excellent family dogs. No wonder that for years the Beagle has been the most popular hound dog among American pet owners. These are curious, clever, and energetic hounds who require plenty of playtime. "
     },
     {
-      "id": 3,
+      "id": "3",
       "name": "Whiskers",
       "type": "Cat",
       "breed": "Siamese",
@@ -90,7 +114,7 @@
       "description": "The Siamese cat's personality is friendly, affectionate, outgoing, and social. This beautiful breed is also one of the most intelligent around."
     },
     {
-      "id": 4,
+      "id": "4",
       "name": "Ace",
       "type": "Dog",
       "breed": "Stray",

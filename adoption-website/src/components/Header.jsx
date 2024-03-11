@@ -1,6 +1,6 @@
 import React from "react";
 import styles from "./Header.module.css";
-import logoImage from "../assets/pet-logo.png";
+import logoImage from "../assets/pet-logo2.png";
 import Heart from "./Heart";
 import { NavLink } from "react-router-dom";
 import { useNavigate } from "react-router-dom";
