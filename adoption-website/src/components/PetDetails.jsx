@@ -4,6 +4,7 @@ import Loader from "./Loader";
 import clsx from "clsx";
 import styles from "./PetDetails.module.css";
 import Header from "./Header";
+import NavBar from "./NavBar";
 
 const PetDetails = () => {
   const { id } = useParams();
@@ -42,6 +43,7 @@ const PetDetails = () => {
   return (
     <>
       <Header />
+      <NavBar />
       <div className={styles.container}>
         <h2>{petDetails.name}</h2>
         <hr></hr>

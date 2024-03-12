@@ -4,6 +4,7 @@ import Footer from "./Footer";
 import PetCard from "./PetCard";
 import Header from "./Header";
 import { SearchBar } from "./SearchBar";
+import NavBar from "./NavBar";
 
 import styles from "./Layout.module.css";
 
@@ -11,24 +12,7 @@ export default function Layout() {
   return (
     <>
       <Header />
-      <header className={styles.header}>
-        <nav className={styles.nav}>
-          <ul>
-            <li>
-              <NavLink to="/home">HOME</NavLink>
-            </li>
-            <li>
-              <NavLink to="/articles">ARTICLES</NavLink>
-            </li>
-            <li>
-              <NavLink to="/contact">CONTACT</NavLink>
-            </li>
-            <li>
-              <NavLink to="/adoption">ADOPTION</NavLink>
-            </li>
-          </ul>
-        </nav>
-      </header>
+      <NavBar />
       <div className={styles.container}>
         <div className={styles.headingsContainer}>
           <SearchBar />

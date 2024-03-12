@@ -1,32 +1,3 @@
-.header {
-  background-color: var(--main-color);
-  padding: 20px;
-  text-align: center;
-}
-
-.nav ul {
-  list-style: none;
-  padding: 0;
-  margin: 0;
-}
-
-.nav ul li {
-  display: inline;
-  margin-right: 20px;
-}
-
-.nav a {
-  text-decoration: none;
-  color: white;
-  font-weight: bold;
-  transition: color 0.3s ease;
-  letter-spacing: 1px;
-}
-
-.nav a:hover {
-  color: var(--hover-color);
-}
-
 .categoryContainer {
   display: flex;
   justify-content: center;
@@ -104,15 +75,6 @@
 }
 
 @media (max-width: 768px) {
-  .nav ul {
-    text-align: center;
-  }
-
-  .nav ul li {
-    display: block;
-    margin: 10px 0;
-  }
-
   .category {
     min-width: 50px;
     min-height: 50px;
