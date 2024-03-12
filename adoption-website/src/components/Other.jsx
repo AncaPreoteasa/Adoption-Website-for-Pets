@@ -1,10 +1,13 @@
 import Header from "./Header";
+import PetCard from "./PetCard";
+import NavBar from "./NavBar";
 
 export default function Other() {
   return (
     <>
       <Header />
-      <h1>OTHER</h1>
+      <NavBar />
+      <PetCard displayOther />
     </>
   );
 }

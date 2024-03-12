@@ -28,23 +28,41 @@ const ExpandMore = styled((props) => {
   }),
 }));
 
-export default function PetCard() {
-  const [pets, setPets] = React.useState([]);
+export default function PetCard({
+  pets: initialPets,
+  displayOnlyDogs,
+  displayOnlyCats,
+  displayOther,
+}) {
+  const [pets, setPets] = React.useState(initialPets || []);
   const [expandedId, setExpandedId] = React.useState(-1);
 
   React.useEffect(() => {
-    fetch("http://localhost:3000/pets").then((res) =>
-      res.json().then((data) => setPets(data))
-    );
-  }, []);
+    if (!initialPets) {
+      fetch("http://localhost:3000/pets").then((res) =>
+        res.json().then((data) => setPets(data))
+      );
+    }
+  }, [initialPets]);
 
   const handleExpandClick = (i) => {
     setExpandedId((prevId) => (prevId === i ? -1 : i));
   };
 
+  const filteredPets = pets.filter((pet) => {
+    if (displayOnlyDogs) {
+      return pet.type === "Dog";
+    } else if (displayOnlyCats) {
+      return pet.type === "Cat";
+    } else if (displayOther) {
+      return pet.type !== "Dog" && pet.type !== "Cat";
+    }
+    return true;
+  });
+
   return (
     <ul className={styles.container}>
-      {pets.map((pet, i) => (
+      {filteredPets.map((pet, i) => (
         <Card key={pet.id} sx={{ maxWidth: 200 }} className={styles.card}>
           <CardHeader
             avatar={
