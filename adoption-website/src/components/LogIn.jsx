@@ -4,6 +4,8 @@ import Visibility from "@mui/icons-material/Visibility";
 import VisibilityOff from "@mui/icons-material/VisibilityOff";
 import styles from "./LogIn.module.css";
 import Header from "./Header";
+import { NavLink, useNavigate } from "react-router-dom";
+import NavBar from "./NavBar";
 
 export default function LogIn() {
   const [showPassword, setShowPassword] = useState(false);
@@ -12,6 +14,7 @@ export default function LogIn() {
     password: "",
   });
 
+  const navigateTo = useNavigate();
   const handleChange = (e) => {
     setFormData({ ...formData, [e.target.name]: e.target.value });
   };
@@ -29,6 +32,7 @@ export default function LogIn() {
   return (
     <>
       <Header />
+      <NavBar />
       <div className={styles.container}>
         <h2>Log In</h2>
         <form className={styles.form} onSubmit={handleSubmit}>
@@ -70,6 +74,12 @@ export default function LogIn() {
           >
             Log In
           </Button>
+          <div className={styles.signUpContainer}>
+            Need an account?
+            <NavLink to="/signUp" className={styles.signUp}>
+              Sign up
+            </NavLink>{" "}
+          </div>
         </form>
       </div>
     </>

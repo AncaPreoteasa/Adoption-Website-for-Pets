@@ -35,3 +35,7 @@
 .logIn:hover {
   color: var(--main-color);
 }
+
+.logInContainer {
+  padding-top: 10px;
+}

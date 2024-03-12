@@ -6,6 +6,7 @@ import styles from "./SignUp.module.css";
 import Header from "./Header";
 import axios from "axios";
 import { NavLink, useNavigate } from "react-router-dom";
+import NavBar from "./NavBar";
 
 const SignUp = () => {
   const [showPassword, setShowPassword] = useState(false);
@@ -78,6 +79,7 @@ const SignUp = () => {
   return (
     <>
       <Header />
+      <NavBar />
       <div className={styles.container}>
         <h2>Sign up</h2>
         <form className={styles.form} onSubmit={handleSubmit}>
@@ -148,6 +150,12 @@ const SignUp = () => {
           >
             Sign Up
           </Button>
+          <div className={styles.logInContainer}>
+            Already have an account?{" "}
+            <NavLink to="/logIn" className={styles.logIn}>
+              Log in
+            </NavLink>
+          </div>
         </form>
         <div>
           Already have an account?{" "}

@@ -27,3 +27,15 @@
   margin: 20px 0 0 0 !important;
   border-radius: 23px !important;
 }
+
+.signUp {
+  color: var(--main-color);
+}
+
+.signUp:hover {
+  color: var(--main-color);
+}
+
+.signUpContainer {
+  padding-top: 10px;
+}
