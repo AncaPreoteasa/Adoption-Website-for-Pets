@@ -29,8 +29,8 @@ const ExpandMore = styled((props) => {
 }));
 
 export default function PetCard() {
-  const [expanded, setExpanded] = React.useState(false);
   const [pets, setPets] = React.useState([]);
+  const [expandedId, setExpandedId] = React.useState(-1);
 
   React.useEffect(() => {
     fetch("http://localhost:3000/pets").then((res) =>
@@ -38,13 +38,13 @@ export default function PetCard() {
     );
   }, []);
 
-  const handleExpandClick = () => {
-    setExpanded(!expanded);
+  const handleExpandClick = (i) => {
+    setExpandedId((prevId) => (prevId === i ? -1 : i));
   };
 
   return (
     <ul className={styles.container}>
-      {pets.map((pet) => (
+      {pets.map((pet, i) => (
         <Card key={pet.id} sx={{ maxWidth: 200 }} className={styles.card}>
           <CardHeader
             avatar={
@@ -83,15 +83,14 @@ export default function PetCard() {
               <ShareIcon />
             </IconButton>
             <ExpandMore
-              expand={expanded}
-              onClick={handleExpandClick}
-              aria-expanded={expanded}
+              onClick={() => handleExpandClick(i)}
+              aria-expanded={expandedId === i}
               aria-label="show more"
             >
               <ExpandMoreIcon />
             </ExpandMore>
           </CardActions>
-          <Collapse in={expanded} timeout="auto" unmountOnExit>
+          <Collapse in={expandedId === i} timeout="auto" unmountOnExit>
             <CardContent>
               <Typography paragraph>
                 <b>Details:</b>
