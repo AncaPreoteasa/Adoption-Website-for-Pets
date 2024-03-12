@@ -5,6 +5,8 @@ import PetCard from "./PetCard";
 import Header from "./Header";
 import { SearchBar } from "./SearchBar";
 import NavBar from "./NavBar";
+import dogImage from "../assets/dog.png";
+import catImage from "../assets/cat.png";
 
 import styles from "./Layout.module.css";
 
@@ -23,10 +25,22 @@ export default function Layout() {
         </div>
         <div className={styles.categoryContainer}>
           <NavLink to="dogs" className={styles.category}>
-            Dogs 🦮
+            <img
+              src={dogImage}
+              alt="logo"
+              width="50"
+              className={styles.dog}
+            ></img>
+            Dogs
           </NavLink>
           <NavLink to="cats" className={styles.category}>
-            Cats 🐈
+            <img
+              src={catImage}
+              alt="logo"
+              width="50"
+              className={styles.cat}
+            ></img>
+            Cats
           </NavLink>
           <NavLink to="other" className={styles.category}>
             Other 🐇
