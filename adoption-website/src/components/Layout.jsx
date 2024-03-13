@@ -7,6 +7,7 @@ import { SearchBar } from "./SearchBar";
 import NavBar from "./NavBar";
 import dogImage from "../assets/dog.png";
 import catImage from "../assets/cat.png";
+import pawImage from "../assets/paw.png";
 
 import styles from "./Layout.module.css";
 
@@ -43,7 +44,13 @@ export default function Layout() {
             Cats
           </NavLink>
           <NavLink to="other" className={styles.category}>
-            Other 🐇
+            <img
+              src={pawImage}
+              alt="logo"
+              width="50"
+              className={styles.paw}
+            ></img>
+            Other
           </NavLink>
         </div>
       </div>
