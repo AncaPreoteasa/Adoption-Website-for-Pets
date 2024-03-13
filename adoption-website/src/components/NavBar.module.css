@@ -15,7 +15,7 @@
   margin-right: 20px;
 }
 
-.nav a {
+.links {
   text-decoration: none;
   color: white;
   font-weight: bold;
@@ -23,7 +23,11 @@
   letter-spacing: 1px;
 }
 
-.nav a:hover {
+.links:hover {
+  color: var(--hover-color);
+}
+
+.active {
   color: var(--hover-color);
 }
 

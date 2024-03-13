@@ -1,5 +1,5 @@
 import { BrowserRouter, Routes, Route } from "react-router-dom";
-import Home from "./components/Home";
+import Pets from "./components/Pets";
 import Layout from "./components/Layout";
 import Cats from "./components/Cats";
 import Dogs from "./components/Dogs";
@@ -19,7 +19,7 @@ function App() {
       <BrowserRouter>
         <Routes>
           <Route path="/" element={<Layout />}></Route>
-          <Route path="home" element={<Home />} />
+          <Route path="pets" element={<Pets />} />
           <Route path="dogs" element={<Dogs />} />
           <Route path="cats" element={<Cats />} />
           <Route path="other" element={<Other />} />

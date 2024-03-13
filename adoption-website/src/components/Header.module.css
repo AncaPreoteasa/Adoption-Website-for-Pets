@@ -36,3 +36,7 @@
 .logIn:hover {
   color: var(--hover-color);
 }
+
+.active {
+  color: var(--hover-color);
+}

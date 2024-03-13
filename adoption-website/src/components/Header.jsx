@@ -4,6 +4,7 @@ import logoImage from "../assets/pet-logo2.png";
 import Heart from "./Heart";
 import { NavLink } from "react-router-dom";
 import { useNavigate } from "react-router-dom";
+import clsx from "clsx";
 
 export default function Header() {
   const navigateTo = useNavigate();
@@ -25,10 +26,20 @@ export default function Header() {
       </div>
       <div className={styles.links}>
         <Heart className={styles.heart} />
-        <NavLink to="/signUp" className={styles.signUp}>
+        <NavLink
+          to="/signUp"
+          className={({ isActive }) =>
+            clsx(styles.signUp, { [styles.active]: isActive })
+          }
+        >
           Sign Up
         </NavLink>
-        <NavLink to="/logIn" className={styles.logIn}>
+        <NavLink
+          to="/logIn"
+          className={({ isActive }) =>
+            clsx(styles.logIn, { [styles.active]: isActive })
+          }
+        >
           Log In
         </NavLink>
       </div>
