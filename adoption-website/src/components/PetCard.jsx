@@ -60,9 +60,11 @@ export default function PetCard({
     return true;
   });
 
+  const petsToDisplay = filteredPets.slice(0, 4);
+
   return (
     <ul className={styles.container}>
-      {filteredPets.map((pet, i) => (
+      {petsToDisplay.map((pet, i) => (
         <Card key={pet.id} sx={{ maxWidth: 200 }} className={styles.card}>
           <CardHeader
             avatar={
