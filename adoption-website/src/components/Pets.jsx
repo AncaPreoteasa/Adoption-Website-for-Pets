@@ -1,12 +1,13 @@
 import Header from "./Header";
 import NavBar from "./NavBar";
+import PetCard from "./PetCard";
 
 export default function Pets() {
   return (
     <>
       <Header />
       <NavBar />
-      <h1>Pets</h1>
+      <PetCard maxPets={false} />
     </>
   );
 }

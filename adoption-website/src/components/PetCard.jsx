@@ -33,6 +33,7 @@ export default function PetCard({
   displayOnlyDogs,
   displayOnlyCats,
   displayOther,
+  maxPets = true,
 }) {
   const [pets, setPets] = React.useState(initialPets || []);
   const [expandedId, setExpandedId] = React.useState(-1);
@@ -60,11 +61,11 @@ export default function PetCard({
     return true;
   });
 
-  const petsToDisplay = filteredPets.slice(0, 4);
+  const petsNumber = maxPets ? pets.slice(0, 4) : pets;
 
   return (
     <ul className={styles.container}>
-      {petsToDisplay.map((pet, i) => (
+      {petsNumber.map((pet, i) => (
         <Card key={pet.id} sx={{ maxWidth: 200 }} className={styles.card}>
           <CardHeader
             avatar={
