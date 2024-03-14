@@ -57,7 +57,7 @@ export default function Layout() {
       <h2 className={styles.headingPetsAvailable}>
         Pets Available for Adoption ⬇
       </h2>
-      <PetCard />
+      <PetCard limit={4} />
       <Footer />
     </>
   );

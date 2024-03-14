@@ -7,7 +7,7 @@ export default function Other() {
     <>
       <Header />
       <NavBar />
-      <PetCard displayOther />
+      <PetCard category="Other" />
     </>
   );
 }

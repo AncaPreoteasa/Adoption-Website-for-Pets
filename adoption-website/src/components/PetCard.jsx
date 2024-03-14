@@ -28,44 +28,31 @@ const ExpandMore = styled((props) => {
   }),
 }));
 
-export default function PetCard({
-  pets: initialPets,
-  displayOnlyDogs,
-  displayOnlyCats,
-  displayOther,
-  maxPets = true,
-}) {
-  const [pets, setPets] = React.useState(initialPets || []);
+export default function PetCard({ category, limit }) {
+  const [pets, setPets] = React.useState([]);
   const [expandedId, setExpandedId] = React.useState(-1);
 
   React.useEffect(() => {
-    if (!initialPets) {
-      fetch("http://localhost:3000/pets").then((res) =>
-        res.json().then((data) => setPets(data))
-      );
+    let url = "http://localhost:3000/pets";
+    if (category) {
+      url += `?type=${category}`;
     }
-  }, [initialPets]);
+    fetch(url)
+      .then((res) => res.json())
+      .then((data) => {
+        const filteredPets = limit ? data.slice(0, limit) : data;
+        setPets(filteredPets);
+      })
+      .catch((error) => console.error("Error fetching pets:", error.message));
+  }, [category, limit]);
 
   const handleExpandClick = (i) => {
     setExpandedId((prevId) => (prevId === i ? -1 : i));
   };
 
-  const filteredPets = pets.filter((pet) => {
-    if (displayOnlyDogs) {
-      return pet.type === "Dog";
-    } else if (displayOnlyCats) {
-      return pet.type === "Cat";
-    } else if (displayOther) {
-      return pet.type !== "Dog" && pet.type !== "Cat";
-    }
-    return true;
-  });
-
-  const petsNumber = maxPets ? pets.slice(0, 4) : pets;
-
   return (
     <ul className={styles.container}>
-      {petsNumber.map((pet, i) => (
+      {pets.map((pet, i) => (
         <Card key={pet.id} sx={{ maxWidth: 200 }} className={styles.card}>
           <CardHeader
             avatar={

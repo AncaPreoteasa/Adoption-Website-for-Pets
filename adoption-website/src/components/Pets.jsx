@@ -7,7 +7,7 @@ export default function Pets() {
     <>
       <Header />
       <NavBar />
-      <PetCard maxPets={false} />
+      <PetCard />
     </>
   );
 }

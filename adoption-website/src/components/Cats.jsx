@@ -8,7 +8,7 @@ export default function Cats() {
     <>
       <Header />
       <NavBar />
-      <PetCard displayOnlyCats />
+      <PetCard category="Cat" />
     </>
   );
 }
