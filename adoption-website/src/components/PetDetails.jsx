@@ -55,6 +55,9 @@ const PetDetails = () => {
           <b>About:</b> {petDetails.description}
         </p>
         <p>
+          <b>Location:</b> {petDetails.location}
+        </p>
+        <p>
           <b>Size:</b> {petDetails.size}
         </p>
         <p>
