@@ -7,7 +7,7 @@ import { SearchBar } from "./SearchBar";
 import NavBar from "./NavBar";
 import dogImage from "../assets/dog.png";
 import catImage from "../assets/cat.png";
-import pawImage from "../assets/paw.png";
+import pawImage from "../assets/paw2.png";
 
 import styles from "./Layout.module.css";
 

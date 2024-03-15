@@ -40,3 +40,9 @@
 .active {
   color: var(--hover-color);
 }
+
+@media (max-width: 768px) {
+  .container {
+    padding: 0.6em 2em;
+  }
+}

@@ -23,6 +23,12 @@
   letter-spacing: 1px;
 }
 
+.hamburgerIcon {
+  display: none;
+  cursor: pointer;
+  font-size: 20px;
+}
+
 .links:hover {
   color: var(--hover-color);
 }
@@ -39,5 +45,24 @@
   .nav ul li {
     display: block;
     margin: 10px 0;
+  }
+}
+
+@media (max-width: 600px) {
+  .hamburgerIcon {
+    display: block;
+    margin-left: 10px;
+  }
+
+  .hideNavMobile {
+    display: none;
+  }
+
+  .showNavMobile {
+    display: flex;
+  }
+
+  .nav {
+    padding-top: 5px;
   }
 }

@@ -1,12 +1,28 @@
-import React from "react";
+import React, { useState } from "react";
 import styles from "./NavBar.module.css";
 import { NavLink } from "react-router-dom";
 import clsx from "clsx";
 
 const NavBar = () => {
+  const [isOpen, setIsOpen] = useState(false);
+
+  function handleMenuToggle() {
+    setIsOpen(!isOpen);
+  }
+
   return (
     <header className={styles.header}>
-      <nav className={styles.nav}>
+      <button
+        className={styles.hamburgerIcon}
+        onClick={() => handleMenuToggle()}
+      >
+        ☰
+      </button>
+      <nav
+        className={`${styles.nav} ${
+          isOpen ? styles.showNavMobile : styles.hideNavMobile
+        }`}
+      >
         <ul>
           <li>
             <NavLink
