@@ -4,9 +4,10 @@ import Visibility from "@mui/icons-material/Visibility";
 import VisibilityOff from "@mui/icons-material/VisibilityOff";
 import styles from "./SignUp.module.css";
 import Header from "./Header";
-import axios from "axios";
 import { NavLink, useNavigate } from "react-router-dom";
 import NavBar from "./NavBar";
+import Snackbar from "@mui/material/Snackbar";
+import Alert from "@mui/material/Alert";
 
 const SignUp = () => {
   const [showPassword, setShowPassword] = useState(false);
@@ -17,6 +18,20 @@ const SignUp = () => {
     password: "",
     retypePassword: "",
   });
+
+  const [open, setOpen] = React.useState(false);
+
+  const handleClick = () => {
+    setOpen(true);
+  };
+
+  const handleClose = (event, reason) => {
+    if (reason === "clickaway") {
+      return;
+    }
+
+    setOpen(false);
+  };
 
   const navigateTo = useNavigate();
 
@@ -59,20 +74,21 @@ const SignUp = () => {
     }
 
     try {
-      const response = await axios.post(
-        "http://localhost:3000/users",
-        formData
-      );
-      setSuccessMessage("User registered successfully");
-      setError(null);
-      console.log("User registered successfully:", response.data);
-      navigateTo("/logIn");
+      const response = await fetch("http://localhost:3000/users", {
+        method: "POST",
+        body: JSON.stringify(formData),
+      });
+      if (response.status === 200 || response.status === 201) {
+        console.log("User registered successfully.");
+        setError(null);
+        handleClick();
+        navigateTo("/logIn");
+      } else {
+        setError("Failed...");
+      }
     } catch (error) {
-      setError(
-        error.response.data.message || "An error occurred during registration"
-      );
-      setSuccessMessage(null);
-      console.error("Error during registration:", error.response.data);
+      console.warn(error);
+      setError("An error occurred during registration");
     }
   };
 
@@ -157,13 +173,17 @@ const SignUp = () => {
             </NavLink>
           </div>
         </form>
-        <div>
-          Already have an account?{" "}
-          <NavLink to="/logIn" className={styles.logIn}>
-            Log in
-          </NavLink>
-        </div>
       </div>
+      <Snackbar open={open} autoHideDuration={4000} onClose={handleClose}>
+        <Alert
+          onClose={handleClose}
+          severity="success"
+          variant="filled"
+          sx={{ width: "100%" }}
+        >
+          Form submitted successfully
+        </Alert>
+      </Snackbar>
     </>
   );
 };

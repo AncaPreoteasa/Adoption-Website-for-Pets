@@ -3,7 +3,6 @@
   flex-direction: column;
   justify-content: flex-start;
   align-items: center;
-  height: 100vh;
   font-family: Nexa Bold, arial, helvetica, sans-serif;
   font-weight: inherit;
   line-height: 1.2;
@@ -30,6 +29,7 @@
 
 .signUp {
   color: var(--main-color);
+  padding-left: 5px;
 }
 
 .signUp:hover {
