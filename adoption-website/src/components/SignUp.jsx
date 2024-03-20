@@ -9,6 +9,8 @@ import NavBar from "./NavBar";
 import Snackbar from "@mui/material/Snackbar";
 import Alert from "@mui/material/Alert";
 
+const BASE_URL = "http://localhost:3000";
+
 const SignUp = () => {
   const [showPassword, setShowPassword] = useState(false);
   const [formData, setFormData] = useState({
@@ -74,7 +76,7 @@ const SignUp = () => {
     }
 
     try {
-      const response = await fetch("http://localhost:3000/users", {
+      const response = await fetch(`${BASE_URL}/users`, {
         method: "POST",
         body: JSON.stringify(formData),
       });
