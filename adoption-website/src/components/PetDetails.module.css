@@ -22,7 +22,16 @@
   color: var(--error-color);
 }
 
-.skeleton {
+.skeleton,
+.skeletonDogImage,
+.skeletonBreed,
+.skeletonName,
+.skeletonAbout,
+.skeletonLocation,
+.skeletonLine,
+.skeletonSize,
+.skeletonAge,
+.skeletonAdopt {
   max-width: 800px;
   margin: 0 auto;
   padding: 20px;
@@ -40,5 +49,37 @@
   }
   .image {
     width: 300px;
+  }
+
+  .skeletonDogImage {
+    width: 70% !important;
+  }
+
+  .skeletonBreed {
+    width: 40% !important;
+  }
+  .skeletonName {
+    width: 25% !important;
+  }
+
+  .skeletonLocation {
+    width: 20% !important;
+  }
+
+  .skeletonSize {
+    width: 15% !important;
+  }
+
+  .skeletonAge {
+    width: 25% !important;
+  }
+
+  .skeletonAdopt {
+    width: 15% !important;
+  }
+
+  .skeletonHeader,
+  .skeletonNavBar {
+    height: 50px !important;
   }
 }
