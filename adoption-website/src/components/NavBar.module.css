@@ -41,11 +41,6 @@
   .nav ul {
     text-align: center;
   }
-
-  .nav ul li {
-    display: block;
-    margin: 10px 0;
-  }
 }
 
 @media (max-width: 600px) {
