@@ -5,6 +5,8 @@ import clsx from "clsx";
 import styles from "./PetDetails.module.css";
 import Header from "./Header";
 import NavBar from "./NavBar";
+import Skeleton from "@mui/material/Skeleton";
+import Stack from "@mui/material/Stack";
 
 const PetDetails = () => {
   const { id } = useParams();
@@ -36,7 +38,76 @@ const PetDetails = () => {
     if (error) {
       return <p>{error}</p>;
     } else {
-      return <Loader />;
+      return (
+        <Stack spacing={1} className={styles.skeleton}>
+          <Skeleton
+            variant="rectangular"
+            height={30}
+            width="10%"
+            className={styles.skeletonImage}
+          />
+          <Skeleton
+            variant="rectangular"
+            height={5}
+            width="100%"
+            className={styles.skeletonImage}
+          />
+          <Skeleton
+            variant="rectangular"
+            height={30}
+            width="25%"
+            className={styles.skeletonImage}
+          />
+          <Skeleton
+            variant="rectangular"
+            height={250}
+            width="50%"
+            className={styles.skeletonImage}
+          />
+          <Skeleton
+            variant="rectangular"
+            height={100}
+            width="100%"
+            className={styles.skeletonImage}
+          />
+          <Skeleton
+            variant="rectangular"
+            height={30}
+            width="15%"
+            className={styles.skeletonImage}
+          />
+          <Skeleton
+            variant="rectangular"
+            height={30}
+            width="10%"
+            className={styles.skeletonImage}
+          />
+          <Skeleton
+            variant="rectangular"
+            height={30}
+            width="5%"
+            className={styles.skeletonImage}
+          />
+          <Skeleton
+            variant="rectangular"
+            height={30}
+            width="15%"
+            className={styles.skeletonImage}
+          />
+          <Skeleton
+            variant="rectangular"
+            height={30}
+            width="20%"
+            className={styles.skeletonImage}
+          />
+          <Skeleton
+            variant="rectangular"
+            height={30}
+            width="10%"
+            className={styles.skeletonImage}
+          />
+        </Stack>
+      );
     }
   }
 
@@ -50,7 +121,12 @@ const PetDetails = () => {
         <p>
           <b>Breed:</b> {petDetails.breed}
         </p>
-        <img src={petDetails.image} alt={petDetails.name} width="400"></img>
+        <img
+          src={petDetails.image}
+          alt={petDetails.name}
+          width="400"
+          className={styles.image}
+        ></img>
         <p>
           <b>About:</b> {petDetails.description}
         </p>

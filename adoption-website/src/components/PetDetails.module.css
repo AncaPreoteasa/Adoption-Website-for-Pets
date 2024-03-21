@@ -4,10 +4,8 @@
   padding: 20px;
 }
 
-@media (max-width: 768px) {
-  .container {
-    padding: 10px;
-  }
+.image {
+  width: 400px;
 }
 
 .status {
@@ -22,4 +20,25 @@
 .notTrained,
 .notVaccinated {
   color: var(--error-color);
+}
+
+.skeleton {
+  max-width: 800px;
+  margin: 0 auto;
+  padding: 20px;
+  display: flex;
+  align-items: flex-start;
+}
+
+.skeletonImage {
+  text-align: left;
+}
+
+@media (max-width: 768px) {
+  .container {
+    padding: 10px;
+  }
+  .image {
+    width: 300px;
+  }
 }
