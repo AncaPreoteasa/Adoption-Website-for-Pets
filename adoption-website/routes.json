@@ -1,0 +1,6 @@
+{
+  "/users*": "/666/users$1",
+  "/pets*": "/666/pets$1",
+  "/favorite*": "/666/favorite$1",
+  "/profile": "/600/profile$1"
+}
