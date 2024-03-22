@@ -1,19 +1,36 @@
-import React from "react";
+import React, { useState } from "react";
 import styles from "./SearchBar.module.css";
+import searchImage from "../assets/search.png";
 
 export function SearchBar() {
-  //   const handleInputChange = (e) => {
-  //     setSearchQuery(e.target.value);
-  //   };
+  const [searchQuery, setSearchQuery] = useState("");
+  const handleInputChange = (e) => {
+    setSearchQuery(e.target.value);
+  };
+
+  const handleSubmit = (e) => {
+    e.preventDefault();
+  };
 
   return (
     <div className={styles.container}>
-      <input
-        className={styles.searchBar}
-        type="text"
-        placeholder="Search Terrier, Kitten, etc."
-        // onChange={handleInputChange}
-      />
+      <form onSubmit={handleSubmit} className={styles.form}>
+        <input
+          className={styles.searchBar}
+          type="text"
+          placeholder="Search Terrier, Kitten, etc."
+          value={searchQuery}
+          onChange={handleInputChange}
+        />
+        <button type="submit" className={styles.searchButton}>
+          <img
+            src={searchImage}
+            alt="logo"
+            width="20"
+            className={styles.search}
+          ></img>
+        </button>
+      </form>
     </div>
   );
 }
