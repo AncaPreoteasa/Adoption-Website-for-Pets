@@ -10,8 +10,17 @@
   padding: 1em;
   margin: 0.4em;
   width: 20%;
-  border-radius: 5px;
+  border-radius: 8px;
   border-color: var(--background-color);
   height: 10px;
   min-width: 250px;
+}
+
+.form {
+  display: flex;
+  align-items: center;
+}
+
+.searchButton {
+  padding: 0.5em 1em;
 }
