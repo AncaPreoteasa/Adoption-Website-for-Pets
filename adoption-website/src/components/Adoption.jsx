@@ -9,7 +9,7 @@ export default function Adoption() {
       <Header />
       <NavBar />
       <div className={styles.adoptionContainer}>
-        <h3>Frequently asked questions</h3>
+        <h3 className={styles.heading3}>Frequently asked questions</h3>
         <AccordionComponent />
       </div>
     </>

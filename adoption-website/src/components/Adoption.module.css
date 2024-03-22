@@ -4,3 +4,7 @@
   margin-top: 50px;
   align-items: center;
 }
+
+.heading3 {
+  color: var(--main-color);
+}
