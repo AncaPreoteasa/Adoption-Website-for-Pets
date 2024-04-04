@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import { TextField, IconButton, InputAdornment, Button } from "@mui/material";
 import Visibility from "@mui/icons-material/Visibility";
 import VisibilityOff from "@mui/icons-material/VisibilityOff";
@@ -6,6 +6,10 @@ import styles from "./LogIn.module.css";
 import Header from "./Header";
 import { NavLink, useNavigate } from "react-router-dom";
 import NavBar from "./NavBar";
+import Skeleton from "@mui/material/Skeleton";
+import Stack from "@mui/material/Stack";
+
+const BASE_URL = "http://localhost:3000";
 
 export default function LogIn() {
   const [showPassword, setShowPassword] = useState(false);
@@ -13,6 +17,9 @@ export default function LogIn() {
     email: "",
     password: "",
   });
+
+  const [isLoading, setIsLoading] = useState(true);
+  const [error, setError] = useState(null);
 
   const navigateTo = useNavigate();
   const handleChange = (e) => {
@@ -23,11 +30,75 @@ export default function LogIn() {
     setShowPassword(!showPassword);
   };
 
-  const handleSubmit = (e) => {
+  const handleSubmit = async (e) => {
     e.preventDefault();
 
+    try {
+      setIsLoading(true);
+      const response = await fetch(`${BASE_URL}/auth/login`, {
+        method: "POST",
+        headers: {
+          "Content-type": "application/json",
+        },
+        body: JSON.stringify(formData),
+      });
+      if (response.status === 200) {
+        console.log("User logged in successfully");
+        const data = await response.json();
+        setError(null);
+        navigateTo("/");
+        return data;
+      } else {
+        setError("Failed...");
+      }
+    } catch (err) {
+      console.warn(err);
+      setError("An error occured during login");
+    }
+
+    setIsLoading(false);
     console.log(formData);
   };
+
+  useEffect(() => {
+    const delay = setTimeout(() => {
+      setIsLoading(false);
+    }, 4000);
+    return () => clearTimeout(delay);
+  }, []);
+
+  if (isLoading)
+    if (error) {
+      return <p>{error}</p>;
+    } else {
+      return (
+        <>
+          <Stack spacing={0.1}>
+            <Skeleton
+              variant="rectangular"
+              height={50}
+              width="100%"
+              className={styles.skeletonHeader}
+            />
+            <Skeleton
+              variant="rectangular"
+              height={50}
+              width="100%"
+              className={styles.skeletonNavBar}
+            />
+          </Stack>
+          <Stack spacing={1} className={styles.stack}>
+            <Skeleton
+              variant="text"
+              sx={{ fontSize: "3rem" }}
+              width={100}
+              className={styles.skeleton}
+            />
+            <Skeleton variant="rectangular" width={350} height={250} />
+          </Stack>
+        </>
+      );
+    }
 
   return (
     <>

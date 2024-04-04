@@ -39,3 +39,13 @@
 .signUpContainer {
   padding-top: 10px;
 }
+
+.stack {
+  display: flex;
+  align-items: center;
+}
+
+.skeletonH1 {
+  display: flex;
+  align-items: center;
+}
