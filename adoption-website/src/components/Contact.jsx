@@ -1,6 +1,7 @@
 import Header from "./Header";
 import NavBar from "./NavBar";
 import styles from "./Contact.module.css";
+import Footer from "./Footer";
 
 export default function Contact() {
   return (
@@ -28,6 +29,7 @@ export default function Contact() {
           </form>
         </div>
       </div>
+      <Footer />
     </>
   );
 }

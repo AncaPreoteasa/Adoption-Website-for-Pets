@@ -1,5 +1,6 @@
 import Header from "./Header";
 import NavBar from "./NavBar";
+import Footer from "./Footer";
 
 export default function Articles() {
   return (
@@ -7,6 +8,7 @@ export default function Articles() {
       <Header />
       <NavBar />
       <h1>ARTICLES</h1>
+      <Footer />
     </>
   );
 }
