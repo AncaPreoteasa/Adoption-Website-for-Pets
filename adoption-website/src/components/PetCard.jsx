@@ -32,7 +32,7 @@ export default function PetCard({ category, limit }) {
 
   return (
     <ul className={styles.container}>
-      {pets.map((pet, i) => (
+      {pets.map((pet) => (
         <Card key={pet.id} sx={{ maxWidth: 200 }} className={styles.card}>
           <CardHeader
             avatar={
